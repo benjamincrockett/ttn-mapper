@@ -20,10 +20,10 @@ The easiest is to solder this bridge on the FeatherWing.
 ## Software requirements
 Aside the Adafruit SAMD support you will need the following libraries:
 - For the OLED FeatherWing:
-    - [Adafruit_SSD1306][3](1.1.2)
-    - [Adafruit-GFX-Library][4] (1.2.5)
+    - [Adafruit_SSD1306][3] (2.4.0)
+    - [Adafruit-GFX-Library][4] (1.10.1)
 - For LoRaWan:
-    - [Arduino LMIC][5]
+    - [Arduino LMIC][5] (3.2.0)
 
 ## Running the script
 Copy `ttn_secrets_template.h` to `ttn_secrets.h` and set your Application Key and App EUI.  
@@ -43,8 +43,8 @@ You will need:
 - GPS antenna and pigtail
 
 And the following libraries:
-- [Adafruit_GPS][7] (1.0.3)
-- [Adafruit_ZeroTimer][8] (2.0.0)
+- [Adafruit_GPS][7] (1.5.2)
+- [Adafruit_ZeroTimer][8] (2.2.1)
 - [Adafruit_ASFcore][9]
 
 Add the _TTN Mapper_ integration to your application in the _TTN Console_ and configure the Payload decoder with:
@@ -78,7 +78,7 @@ function Decoder(bytes, port) {
 [2]: https://learn.adafruit.com/adafruit-oled-featherwing
 [3]: https://github.com/adafruit/Adafruit_SSD1306
 [4]: https://github.com/adafruit/Adafruit-GFX-Library
-[5]: https://github.com/matthijskooijman/arduino-lmic
+[5]: https://github.com/mcci-catena/arduino-lmic
 [6]: https://learn.adafruit.com/adafruit-ultimate-gps-featherwing
 [7]: https://github.com/adafruit/Adafruit_GPS
 [8]: https://github.com/adafruit/Adafruit_ZeroTimer
