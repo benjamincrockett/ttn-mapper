@@ -114,14 +114,14 @@ static void send_packet(osjob_t* j)
     }
     // Only send if we have a fix
     if (GPS.fixquality) {
-      // latitude_fixed/longitude_fixed are always positive
-      // See https://github.com/adafruit/Adafruit_GPS/pull/73
-      data = GPS.latitude_fixed * (GPS.lat == 'N' ? 1 : -1) + 90 * 1E7;
+      // Signed latitude_fixed/longitude_fixed based on location
+      // See https://github.com/adafruit/Adafruit_GPS/pull/93
+      data = GPS.latitude_fixed + 90 * 1E7;
       payload[idx++] = data >> 24;
       payload[idx++] = data >> 16;
       payload[idx++] = data >> 8;
       payload[idx++] = data;
-      data = GPS.longitude_fixed * (GPS.lon == 'E' ? 1 : -1) + 180 * 1E7;
+      data = GPS.longitude_fixed + 180 * 1E7;
       payload[idx++] = data >> 24;
       payload[idx++] = data >> 16;
       payload[idx++] = data >> 8;
